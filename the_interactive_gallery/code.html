@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Interactive Gallery - Thenmozhi</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8a854",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                        "text-main": "#1b150e",
+                        "text-subtle": "#96774f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", // 32px
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft-inner': 'inset 0 2px 10px rgba(0,0,0,0.05)',
+                        'recessed': 'inset 2px 4px 8px rgba(0,0,0,0.05), inset -2px -4px 8px rgba(255,255,255,0.5)',
+                    },
+                    transitionTimingFunction: {
+                        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-light/80 dark:bg-background-dark/80 border-b border-[#f3eee8] dark:border-[#3a2e22]">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">gesture</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Thenmozhi</h2>
+</div>
+<nav class="hidden md:flex items-center gap-1 bg-white/50 dark:bg-black/20 p-1.5 rounded-full border border-black/5 dark:border-white/5 backdrop-blur-sm">
+<a class="px-5 py-2 text-sm font-medium rounded-full bg-primary text-white shadow-sm transition-all" href="#">Work</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-text-main dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all" href="#">Agency</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-text-main dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all" href="#">Contact</a>
+</nav>
+<button class="md:hidden p-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-6 md:px-10 py-12 flex flex-col gap-12">
+<!-- Hero Section -->
+<section class="flex flex-col items-start gap-8 py-8 md:py-16 max-w-4xl">
+<h1 class="text-5xl md:text-7xl font-black leading-[0.95] tracking-tight text-text-main dark:text-white">
+                    Crafting digital identities <br/><span class="text-primary">that speak.</span>
+</h1>
+<p class="text-xl md:text-2xl text-text-subtle dark:text-gray-400 font-light max-w-2xl leading-relaxed">
+                    We are a creative agency specializing in fluid, interactive experiences that bridge the gap between human emotion and digital precision.
+                </p>
+</section>
+<!-- Filters -->
+<section class="sticky top-24 z-40 self-start md:self-center">
+<div class="flex flex-wrap gap-2 p-1.5 bg-white dark:bg-[#2a2218] rounded-full shadow-sm border border-black/5 dark:border-white/5">
+<button class="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-medium shadow-md transition-transform hover:scale-105 active:scale-95 duration-200">
+                        All
+                    </button>
+<button class="px-6 py-2.5 rounded-full bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-text-main dark:text-gray-300 text-sm font-medium transition-colors">
+                        Identity
+                    </button>
+<button class="px-6 py-2.5 rounded-full bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-text-main dark:text-gray-300 text-sm font-medium transition-colors">
+                        Digital
+                    </button>
+<button class="px-6 py-2.5 rounded-full bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-text-main dark:text-gray-300 text-sm font-medium transition-colors">
+                        Speech
+                    </button>
+</div>
+</section>
+<!-- Masonry Grid -->
+<section class="masonry-grid w-full py-4">
+<!-- Tile 1: Large Portrait -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Minimalist architectural shapes with soft lighting" class="w-full h-auto object-cover aspect-[3/4] transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Minimalist architectural shapes with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP14vXEys0sgsAkE5oxC3hmboagxNjBy21ZtjAJq_03mbVJ-D0h3415MmZzHs-dybGqU-JN-gzDGvL3Y7OfUNpQ1fwVc2s6rqKM6KpZhszXdge3Tfo7iNuh2omt-NeYEYLrWrqSdH7I0kBFGXkn378J7oz5ffxsTvmpvEXtzftKvuHqPU5xqhDOCntEkblK1jiITNZFNWUmVfHj7NnMqYv3qXfP-OBXfgQ7RkMiZ0He2n_gxTV_H9aZK56RP_Gcbj4Fv2tl43R-fFO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Identity</span>
+<h3 class="text-white text-3xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Apex FinTech</h3>
+</div>
+</div>
+</article>
+<!-- Tile 2: Square -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Abstract fluid orange and blue oil painting texture" class="w-full h-auto object-cover aspect-square transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Abstract fluid orange and blue oil painting texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjQK_LrhJ6EzqMkNYixTmuc_FikH5Go2qIW8fdcrA2Idkf4sMZ6zIqENgWMvfph9zS8DEGSFxz04q4izhErtYz-PZ0y381Zb96gpuffOrf3Cy_GJNogrYxrf7CtQvWdnZP6s5307vdCFBNVDOBj2N5qX4QhvHJCNiE_Bmcxuc9_lxuXeTxgYs8_aNTVSE1b8PZwPUX1Kg1Xuh6-w2OagXLbSfBdnDaoDzhOi2GoufK28HB6a02o4XWxw5gjJITj1XIuRQRPQB_QboL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Speech</span>
+<h3 class="text-white text-2xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Vocalize App</h3>
+</div>
+</div>
+</article>
+<!-- Tile 3: Tall Portrait -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Futuristic neon light installation in dark room" class="w-full h-auto object-cover aspect-[2/3] transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Futuristic neon light installation in dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVHfHs3bV_IEK7PFn2XkC_9SswMkDqXG_4Y1UrcgDA0SZLXO280-MhrTTUVRMAcLhXdhTMJqFzCvX6bED2zoOBKazTEbtRdnlVZKJ_92vOMNz3V6MC3u3EAc-gInYliedO7L7-40lofToDhjwRoxyR0mYsMtiA_95890lJ54-njZMJWEWmC74Brb3FJGuipmFKtdpFZ-vZxvOwY8cWDsRKJfAstn0FwnEO2uxxDUOkzGG-fqydMa6lRa4PGQwfTjk0RUg1rT9zD4UX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Digital</span>
+<h3 class="text-white text-3xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Future Museum</h3>
+</div>
+</div>
+</article>
+<!-- Tile 4: Landscape -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Close up of sustainable paper packaging texture" class="w-full h-auto object-cover aspect-[16/10] transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Close up of sustainable paper packaging texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrGECK_JPRvEDa4yQUjWg6y7Ti3f6xIKl2z1_bKU8f9pIfd6gsZ98HO6cHN7u-kB83fvq4R8FEt-MSIHoloRY__iwnLWIThbo1NWRZ3enMG82CVyRZd_VEZXizyta9PzNQbk65frTGQQYCRQDcOwl8lxBaH4VN0fVUhUfuskEbgzqg2ZG077I5kql7Qf5mzBEApqyy5NLFbTU55AxKQigM6yLakilwet9Z9T7vSbfjEdihr6GTKQDKApy1lwUUVFn9Rweg_cX5PAlO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Identity</span>
+<h3 class="text-white text-2xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Eco Packaging</h3>
+</div>
+</div>
+</article>
+<!-- Tile 5: Square -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Abstract 3D rendered shapes in orange and beige" class="w-full h-auto object-cover aspect-square transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Abstract 3D rendered shapes in orange and beige" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVLeCrf62LNDpI_GL1dKAsFVfMsHC6rRylKu2zlc0NnG3YbnQXZYf4EpL5d_GdQCSGlmDOeB2_LfvQQJTSxE3tlW3-yuK3tdu5WWvqQ8eJPBq7t2S-ja-5CforhRn1SXofW75e8g6GjJKljHLnS8zpzSTOptZq1YJ8X8QlcTy7g9qY29yTxUivYFa7Vi8wwVs_9L1oidEImrJWioYRCrMSvqunJiz46re6a06BU-Sw5EGGp0vWBBco0ploOlN_tfWj1lxOiYoij_NS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Digital</span>
+<h3 class="text-white text-2xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Nebula UI</h3>
+</div>
+</div>
+</article>
+<!-- Tile 6: Portrait -->
+<article class="masonry-item group cursor-pointer">
+<div class="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5 shadow-soft-inner dark:shadow-none transition-all duration-500 ease-spring hover:scale-[1.02] hover:shadow-xl">
+<img alt="Fashion model portrait with dramatic lighting" class="w-full h-auto object-cover aspect-[3/5] transition-transform duration-700 ease-spring group-hover:scale-110" data-alt="Fashion model portrait with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9axh7cziSaJ_phghLBX9LAh6eNDK_45IKo2N9NA5yH9DDG2IaRFgncJN-UXS0_f85z6SMc4IthHWXJWcs2_20GQyka6J7-mpi7R-Q1q7Vw1yUqqCuGjiQf8bLM2Y6NN31nuWROiHyTFz4gC4W9iGT91Zg4fJQFJnkDQHHhp3MOs03CpczFZ6ycv9E8et1e1Xolikp7xbedSUj8ySryKiuYQpSC-oeld-DdVIUzv1shuX20mWPgbajF4Usjpv8YbQgTKriI2vZFrbG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Identity</span>
+<h3 class="text-white text-3xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Velvet Mode</h3>
+</div>
+</div>
+</article>
+</section>
+<!-- CTA / Contact Teaser -->
+<section class="py-20 flex flex-col items-center justify-center text-center gap-6">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight text-text-main dark:text-white">Have a project in mind?</h2>
+<p class="text-text-subtle dark:text-gray-400 text-lg max-w-lg">We are currently accepting new clients for late 2024. Let's create something extraordinary together.</p>
+<a class="mt-4 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-[#d69542] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 ease-spring duration-300" href="#">
+                    Start a conversation
+                </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-white dark:bg-[#1a140d] border-t border-[#f3eee8] dark:border-[#3a2e22] py-12">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<span class="material-symbols-outlined">gesture</span>
+<span class="font-bold text-lg">Thenmozhi</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">Email</a>
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">Instagram</a>
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">LinkedIn</a>
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">Behance</a>
+</div>
+<p class="text-sm text-text-subtle/60 dark:text-gray-500">
+                    © 2024 Thenmozhi Agency
+                </p>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thenmozhi - Creative Agency</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8a854",
+                        "background-light": "#FFFDD0", 
+                        "background-dark": "#211a11",
+                        "surface-light": "rgba(255, 255, 255, 0.4)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.08%22/%3E%3C/svg%3E')"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b150e] font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Texture Overlay -->
+<div class="fixed inset-0 w-full h-full pointer-events-none z-0 bg-noise opacity-60 mix-blend-multiply"></div>
+<!-- Top Minimal Header -->
+<header class="fixed top-0 left-0 w-full z-40 px-6 py-6 md:px-12 flex justify-between items-center pointer-events-none">
+<div class="pointer-events-auto flex items-center gap-2 group cursor-pointer">
+<span class="material-symbols-outlined text-3xl text-[#1b150e]">all_inclusive</span>
+<span class="font-serif text-2xl font-bold tracking-tight text-[#1b150e]">Thenmozhi</span>
+</div>
+<div class="pointer-events-auto hidden md:block">
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-[#1b150e] text-background-light text-sm font-bold transition hover:bg-primary hover:text-white">
+                Get in Touch
+            </button>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="relative z-10 flex flex-col min-h-screen w-full">
+<!-- HERO SECTION -->
+<section class="relative min-h-screen w-full flex items-center justify-center pt-24 pb-12 px-6 md:px-12" id="home">
+<div class="w-full max-w-[1440px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text Content -->
+<div class="lg:col-span-5 flex flex-col gap-8 text-left z-20">
+<div class="flex flex-col gap-4">
+<span class="uppercase tracking-[0.2em] text-xs font-bold text-primary">Creative Audio-Visual Agency</span>
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.1] tracking-tight text-[#1b150e]">
+                            We Speak <br/>
+<span class="italic text-primary">in Gold</span>.
+                        </h1>
+</div>
+<p class="text-lg md:text-xl font-light leading-relaxed text-[#5a4a3a] max-w-md">
+                        Blending audio, visual, and narrative into a honey-voiced experience that lingers.
+                    </p>
+<div class="flex gap-4 pt-4">
+<button class="group flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-primary text-[#1b150e] text-base font-bold transition-transform hover:scale-105">
+<span>Listen to the Story</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- 3D Abstract Visual -->
+<div class="lg:col-span-7 relative h-[50vh] lg:h-[80vh] w-full flex items-center justify-center">
+<div class="absolute inset-0 bg-contain bg-center bg-no-repeat animate-pulse-slow" data-alt="Abstract 3D liquid gold shape floating in cream space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUYSrUIY7gczmQv3PNTMnKo31WpI6-t1IBp99WCLHTfDDUsmEk0uUtpgZF5fm0XBV5Zwcd6WvjE5STjeHW84HJDXD5IQnsCZMTniXIcwdNyZdLsQNx4JxZ9TEk5yLmsThDLw3r9avwJo9MdnaCb0a69HyH5FfArNadgShGu4PcTaMYXwVcIu5ilr3o8cw_f5g_Bqe2Jm3vrxkE1NYmXM_xcHiWSKbHtAVA17XfswVDGrbo7vfAjcPb8PuoW-_wkyHBMhAUw3Zk6pHJ'); mask-image: radial-gradient(circle, black 40%, transparent 70%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%); opacity: 0.9; mix-blend-mode: multiply;">
+</div>
+<!-- Secondary image for depth -->
+<div class="absolute w-3/4 h-3/4 bg-contain bg-center bg-no-repeat opacity-80 mix-blend-hard-light" data-alt="Golden fluid ripples reflecting light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWVAMFlJ_YhgHlDYnrHqlR4kKmAnJs9nSTEZKFObwM12CGW1J_-H-93wr0U6jGdjER5aPQc9XT2DUbis3x7ry57VGo90-lBIqOJCRs_STHmwUiRKKOAtgxkRi9j_zVKQc3ytHf9VqF2fKJ9dGjV3xodjhXyGQXffTsrIgmOI2asQCD__MMwMeia0AA5nttjMZFZlsAo7Xgi29kTy6BjI6aFXMXzrqOG9wKZQslKoZ9t9nTpiYcgZjhcsaSVxOqtqHtKH9olVqnC_sG'); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;">
+</div>
+</div>
+</div>
+</section>
+<!-- VISION SECTION -->
+<section class="relative w-full py-20 px-6 md:px-12" id="vision">
+<div class="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+<div class="lg:w-1/3 flex flex-col gap-6 sticky top-24 h-fit">
+<h2 class="font-serif text-4xl md:text-5xl text-[#1b150e]">The Vision</h2>
+<p class="text-[#5a4a3a] leading-relaxed">
+                        Our philosophy is rooted in the "honey-voice"—a seamless blend of sensory experiences that elevate your brand beyond the visual.
+                    </p>
+<a class="text-primary font-bold hover:underline decoration-2 underline-offset-4 w-fit flex items-center gap-2" href="#">
+                        Read full manifesto 
+                        <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Feature 1 -->
+<div class="p-8 rounded-xl bg-white/40 border border-[#e6ddd0] hover:border-primary/50 transition-colors duration-300 flex flex-col gap-6 group">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">music_note</span>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2 text-[#1b150e]">Sonic Branding</h3>
+<p class="text-sm text-[#5a4a3a]">Crafting audio identities that resonate on a subconscious level, creating a unique signature for your brand.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="p-8 rounded-xl bg-white/40 border border-[#e6ddd0] hover:border-primary/50 transition-colors duration-300 flex flex-col gap-6 group">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2 text-[#1b150e]">Visual Narrative</h3>
+<p class="text-sm text-[#5a4a3a]">Stories told through fluid motion and light, directing the eye and captivating the mind.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="p-8 rounded-xl bg-white/40 border border-[#e6ddd0] hover:border-primary/50 transition-colors duration-300 flex flex-col gap-6 group md:col-span-2">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2 text-[#1b150e]">Sensory Design</h3>
+<p class="text-sm text-[#5a4a3a] max-w-prose">Engaging touch, sight, and sound simultaneously to create immersive digital environments that feel alive.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WORKS GRID -->
+<section class="relative w-full py-20 px-6 md:px-12 bg-[#f4efe8]/50" id="works">
+<div class="w-full max-w-[1440px] mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<h2 class="font-serif text-4xl md:text-6xl text-[#1b150e]">Selected Works</h2>
+<span class="text-sm font-medium uppercase tracking-widest text-[#5a4a3a]">Curated Projects 2023-2024</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[400px]">
+<!-- Item 1: Large -->
+<div class="group relative rounded-xl overflow-hidden cursor-pointer md:col-span-2 lg:col-span-2 bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Fashion model with golden accessories in dark setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJd6yW_E-ZU2cVDmtI_LSB3JK8HTNaTiAoTTd4dAtOrHxcNdKGuKSITPqIuj9PjU7t-hH6pPn7Ok_3qHliPstsYmbeRjmOYX0gIZPeMK74i0jAcDj7V4U00SsX1m8DknoXHUDO8-TXNIuUL9M5iMhzu3yGLS3NeEXoUX1OEN97v6PXOPRGJ7huM7sUaO42SeeJ6aTXt6KURNyQ92r4qGE-pdYx9EBssqQFm7BTzgsojelN2R-ByObffhIJc5poP_IRXPvhPYAtahSO');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 transition-opacity group-hover:opacity-40"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white translate-y-2 group-hover:translate-y-0 transition-transform">
+<span class="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">Campaign</span>
+<h3 class="font-serif text-3xl">Lumina Essence</h3>
+</div>
+</div>
+<!-- Item 2: Tall -->
+<div class="group relative rounded-xl overflow-hidden cursor-pointer bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract golden sound waves visualization" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY3iwT498RhPDdUUnLrkHRIfft0wnGVqIGl0q--oIwQg8tQA7TzBLhjno3z4oqSyuEC-pKI8NSLlSZ3xakZTZxsgDjrbTuANnsNI2cMMytCeHFrVrFrRagkGWgq9ArqqwWilKpnmCAhOSInQLltR4VvcqpovnJXGBi99d_8MUF9Bky-B1bu_Wi1kPEZyPj5HuSgIOjfqZK3nZ-4KfvlkxqCbbyIm49y9jbIu0Acp374TspicICbb4nGDB9phCtb4inFaCZv4iCBCku');">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-primary/20 transition-colors duration-500"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white translate-y-2 group-hover:translate-y-0 transition-transform">
+<span class="text-white/80 text-sm font-bold tracking-widest uppercase mb-2 block">Sonic Identity</span>
+<h3 class="font-serif text-3xl">Echo Chamber</h3>
+</div>
+</div>
+<!-- Item 3: Regular -->
+<div class="group relative rounded-xl overflow-hidden cursor-pointer bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist architectural photography with warm lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpcToUL2H92HyDKGPwmVpplRzV6OLLQol7AVGIwNBD29l3ciOXHOFVEZ1M1D22BCoceB6bgoaRuBovu2Xrmn25A5H5VUm2XXgHIvgRk-xJ_EvdG2xIgw0ZOdOd8PHWZnSXw80AUCIYcRoceXPASG5ukqXFajNdPLOAprTcxHjjG1DZBQ3gxcunE4RWVLAUnKZE0jCD5fWs-GnGgb96eEqrhTox03pePVrQLI8HB7rwpBlB_eymHqvsmd7kSOvfPZA8q1Cco4aDN19y');">
+</div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-primary/20 transition-colors duration-500"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white translate-y-2 group-hover:translate-y-0 transition-transform">
+<span class="text-white/80 text-sm font-bold tracking-widest uppercase mb-2 block">Branding</span>
+<h3 class="font-serif text-3xl">Arch &amp; Stone</h3>
+</div>
+</div>
+<!-- Item 4: Wide -->
+<div class="group relative rounded-xl overflow-hidden cursor-pointer md:col-span-2 bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a luxury perfume bottle on cream silk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjN-1uHKY3KWaSjFuojESCIy6SngS8F8N2FB91IRfbEpmvYuLoOhtbaHAix_igqrqF_e2tCDsS6R3Z-67TklV6gThRvT2nOKxiqDEnrZqpRa_xmjwHSG_EDUtGJ5dgzCCwT74VHMjrIrzp0nxu8PthbHBrt-nRCKrNHL4F6xjbnoV3c5cc_vir01jMcxwGn8Q3ZV1MP1e0XU8_PwtNMVoGNT-cTen7LL3OEWmFQCK1syfyPwuFvaJJDX8WV0bWYZDtMLGaJHlnJ9NF');">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-primary/20 transition-colors duration-500"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white translate-y-2 group-hover:translate-y-0 transition-transform">
+<span class="text-white/80 text-sm font-bold tracking-widest uppercase mb-2 block">Product Launch</span>
+<h3 class="font-serif text-3xl">Silk Road</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA SECTION -->
+<section class="relative w-full py-32 px-6 md:px-12 flex flex-col items-center justify-center text-center" id="contact">
+<div class="max-w-3xl flex flex-col items-center gap-8">
+<span class="material-symbols-outlined text-4xl text-primary animate-bounce">keyboard_arrow_down</span>
+<h2 class="font-serif text-5xl md:text-7xl text-[#1b150e] leading-tight">
+                    Ready to find your <br/> <span class="text-primary italic">voice?</span>
+</h2>
+<p class="text-lg text-[#5a4a3a] max-w-lg">
+                    Let's create something golden together. Reach out for a consultation on your next auditory or visual project.
+                </p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<button class="flex items-center justify-center rounded-full h-14 px-10 bg-[#1b150e] text-white text-base font-bold transition hover:bg-primary hover:text-[#1b150e] hover:scale-105">
+                        Start a Project
+                    </button>
+<button class="flex items-center justify-center rounded-full h-14 px-10 border border-[#1b150e]/20 hover:border-[#1b150e] bg-transparent text-[#1b150e] text-base font-bold transition">
+                        View Rates
+                    </button>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="w-full py-12 px-6 md:px-12 border-t border-[#1b150e]/10 mt-auto bg-white/30">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-[#5a4a3a]">
+<div class="flex items-center gap-2">
+<span class="font-serif font-bold text-[#1b150e]">Thenmozhi</span>
+<span>© 2024</span>
+</div>
+<div class="flex gap-8 font-medium">
+<a class="hover:text-primary transition" href="#">Instagram</a>
+<a class="hover:text-primary transition" href="#">LinkedIn</a>
+<a class="hover:text-primary transition" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- FLOATING DOCK NAVIGATION -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+<div class="glass flex items-center gap-1 p-2 rounded-full shadow-2xl shadow-primary/10">
+<a class="flex items-center justify-center h-10 px-5 rounded-full text-sm font-medium text-[#1b150e] hover:bg-white/50 transition-colors" href="#home">
+                Home
+            </a>
+<a class="flex items-center justify-center h-10 px-5 rounded-full text-sm font-medium text-[#1b150e] hover:bg-white/50 transition-colors" href="#vision">
+                Vision
+            </a>
+<a class="flex items-center justify-center h-10 px-5 rounded-full text-sm font-medium text-[#1b150e] hover:bg-white/50 transition-colors" href="#works">
+                Works
+            </a>
+<a class="flex items-center justify-center h-10 px-5 rounded-full bg-[#1b150e] text-primary text-sm font-bold transition-transform hover:scale-105" href="#contact">
+                Contact
+            </a>
+</div>
+</nav>
+</body></html>

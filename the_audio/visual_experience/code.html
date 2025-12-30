@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thenmozhi Audio Experience</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#e8a854",
+                "background-light": "#f8f7f6",
+                "background-dark": "#211a11",
+                },
+                fontFamily: {
+                "display": ["Inter", "sans-serif"],
+                "body": ["Inter", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                animation: {
+                    'spin-slow': 'spin 12s linear infinite',
+                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                }
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-panel {
+            background: rgba(33, 26, 17, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Vinyl Record Grooves */
+        .vinyl-grooves {
+            background: repeating-radial-gradient(
+            #111 0, 
+            #111 2px, 
+            #222 3px, 
+            #222 4px
+            );
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b150e] dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col relative transition-colors duration-300">
+<!-- Ambient Background Mesh -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary/20 rounded-full blur-[100px] animate-pulse-slow"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-300/20 dark:bg-blue-900/20 rounded-full blur-[120px]"></div>
+<div class="absolute top-[40%] left-[30%] w-[30vw] h-[30vw] bg-pink-300/20 dark:bg-purple-900/20 rounded-full blur-[80px]"></div>
+</div>
+<!-- Top Navigation -->
+<header class="relative z-20 flex items-center justify-between px-8 py-6 w-full max-w-[1400px] mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</div>
+<h2 class="text-sm font-bold tracking-[0.1em] uppercase opacity-90">Thenmozhi Audio</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 bg-white/50 dark:bg-black/20 px-6 py-2 rounded-full backdrop-blur-sm border border-white/20">
+<a class="text-xs font-medium uppercase tracking-wider hover:text-primary transition-colors" href="#">Library</a>
+<a class="text-xs font-medium uppercase tracking-wider text-primary" href="#">Now Playing</a>
+<a class="text-xs font-medium uppercase tracking-wider hover:text-primary transition-colors" href="#">Equalizer</a>
+</nav>
+<button class="flex items-center justify-center size-10 rounded-full bg-white/50 dark:bg-black/20 hover:bg-white dark:hover:bg-black/40 transition-all backdrop-blur-md">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-4 py-8 gap-12">
+<!-- Vinyl Record Visual -->
+<div class="relative group">
+<!-- Outer Glow -->
+<div class="absolute inset-0 bg-primary/20 blur-[60px] rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-700"></div>
+<!-- Vinyl Disc Container -->
+<div class="relative size-[320px] md:size-[480px] rounded-full shadow-2xl animate-spin-slow ring-1 ring-white/10">
+<!-- Vinyl Texture/Grooves -->
+<div class="absolute inset-0 rounded-full vinyl-grooves opacity-90"></div>
+<!-- Album Art (Label) -->
+<div class="absolute inset-0 m-auto size-[180px] md:size-[260px] rounded-full overflow-hidden border-4 border-[#1a1a1a]">
+<img alt="Abstract geometric shapes representing the sun at midnight" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfTr3slFmY2oIYsDZ-3-ctg7uo5BHbu4MJrEcotp1Axoia4wA7jWb_8Duf9SUpjidxiC1ZmiaH8TCTNw0C_lCJFjlV25R8mT2r2B-4L7mL17HFgkHbWPSmRIgiI2e0nI9vwQV-pQnaYHzNVsnjpQu3So-WGjkfceHqTMq87DUqyrQ0qO_v_uvim58ph6ccOEDFlHdfE8oLaiW0h-j8EF2c-mzRYZrmBuhzuYwXS275LnhRz1S7meO-NC2ZNb2vvgZ_u_U33kTfndI"/>
+</div>
+<!-- Center Spindle Hole -->
+<div class="absolute inset-0 m-auto size-4 bg-background-light dark:bg-background-dark rounded-full border border-gray-300 dark:border-gray-700 z-20"></div>
+<!-- Reflection/Shine overlay -->
+<div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+</div>
+<!-- Tonearm decoration (Abstract) -->
+<div class="absolute -top-10 -right-10 w-24 h-64 border-r-4 border-gray-300 dark:border-gray-600 rounded-r-full opacity-20 pointer-events-none hidden lg:block"></div>
+</div>
+<!-- Track Information -->
+<div class="flex flex-col items-center text-center gap-2 mt-4">
+<h1 class="text-4xl md:text-5xl font-light tracking-tight text-gray-900 dark:text-white">Midnight Sun</h1>
+<p class="text-lg md:text-xl text-primary font-medium tracking-wide">Solar Fields</p>
+</div>
+</main>
+<!-- Bottom Control Section -->
+<div class="relative z-20 w-full flex flex-col items-end pb-8">
+<!-- Waveform Visualizer (Decorative CSS simulation) -->
+<div class="w-full h-24 flex items-end justify-center gap-[2px] md:gap-1 px-4 mb-8 opacity-40 mask-image-gradient">
+<!-- Generating bars with varying heights to simulate audio wave -->
+<div class="w-1 bg-current h-[20%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[40%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[60%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[30%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[50%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[80%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[45%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[25%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[65%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[90%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[55%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[35%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[75%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[40%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[60%] rounded-t-sm"></div>
+<div class="w-1 bg-primary h-[85%] rounded-t-sm shadow-[0_0_10px_rgba(232,168,84,0.5)]"></div>
+<div class="w-1 bg-primary h-[95%] rounded-t-sm shadow-[0_0_10px_rgba(232,168,84,0.5)]"></div>
+<div class="w-1 bg-primary h-[70%] rounded-t-sm shadow-[0_0_10px_rgba(232,168,84,0.5)]"></div>
+<div class="w-1 bg-current h-[50%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[30%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[60%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[40%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[80%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[55%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[25%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[45%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[35%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[65%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[20%] rounded-t-sm"></div>
+<div class="w-1 bg-current h-[40%] rounded-t-sm"></div>
+<!-- Hide extra bars on small screens -->
+<div class="w-1 bg-current h-[60%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[30%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[70%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[45%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[85%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[55%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[35%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[65%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[25%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[50%] rounded-t-sm hidden sm:block"></div>
+<div class="w-1 bg-current h-[75%] rounded-t-sm hidden md:block"></div>
+<div class="w-1 bg-current h-[40%] rounded-t-sm hidden md:block"></div>
+<div class="w-1 bg-current h-[60%] rounded-t-sm hidden md:block"></div>
+<div class="w-1 bg-current h-[30%] rounded-t-sm hidden md:block"></div>
+<div class="w-1 bg-current h-[55%] rounded-t-sm hidden md:block"></div>
+<div class="w-1 bg-current h-[80%] rounded-t-sm hidden md:block"></div>
+</div>
+<!-- Floating Player Controls -->
+<div class="w-full flex justify-center px-4">
+<div class="glass-panel p-2 pr-6 rounded-full flex items-center gap-4 md:gap-8 shadow-2xl max-w-2xl w-full">
+<!-- Playback Buttons -->
+<div class="flex items-center gap-2">
+<button class="size-10 md:size-12 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">skip_previous</span>
+</button>
+<button class="size-14 md:size-16 flex items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[32px] md:text-[40px] filled">play_arrow</span>
+</button>
+<button class="size-10 md:size-12 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">skip_next</span>
+</button>
+</div>
+<!-- Progress Bar & Time -->
+<div class="flex-1 flex flex-col justify-center gap-1.5 min-w-[120px]">
+<div class="flex justify-between text-[10px] md:text-xs font-mono font-medium text-gray-500 dark:text-gray-400">
+<span>01:24</span>
+<span>04:45</span>
+</div>
+<!-- Custom Range Slider styled div -->
+<div class="h-1.5 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden cursor-pointer group/progress relative">
+<div class="absolute top-0 left-0 h-full w-[30%] bg-primary rounded-full group-hover/progress:w-[30.5%] transition-all"></div>
+<!-- Hover handle -->
+<div class="absolute top-1/2 -translate-y-1/2 left-[30%] size-3 bg-white rounded-full shadow-md opacity-0 group-hover/progress:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<!-- Secondary Controls -->
+<div class="hidden sm:flex items-center gap-4 border-l border-gray-200 dark:border-gray-700 pl-6">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">shuffle</span>
+</button>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">repeat</span>
+</button>
+<div class="flex items-center gap-2 group/volume">
+<span class="material-symbols-outlined text-[20px] text-gray-500">volume_up</span>
+<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full w-[70%] bg-gray-400 group-hover/volume:bg-primary transition-colors"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

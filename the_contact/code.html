@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Contact - Thenmozhi</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#e8a854",
+              "background-light": "#f8f7f6",
+              "background-dark": "#211a11",
+              "text-main": "#1b150e",
+              "text-muted": "#96774f",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                }
+            },
+            animation: {
+                float: 'float 6s ease-in-out infinite',
+            }
+          },
+        },
+      }
+    </script>
+<style>/* Custom styles for the honey cursor effect */
+body {
+    cursor: none;
+    /* Hide default cursor */
+    }
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none
+    }
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e8a854
+    }
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(232, 168, 84, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s
+    }
+/* Honey trail particles */
+.honey-trail {
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(232, 168, 84, 0.8) 0%, rgba(232, 168, 84, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s forwards;
+    z-index: 9998
+    }
+@keyframes fadeOut {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+        } 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+        }
+    }
+/* Hide cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot, .cursor-outline, .honey-trail {
+        display: none
+        }
+    body {
+        cursor: auto
+        }
+    }
+/* Custom input underline animation */
+.conversational-input {
+    border: none;
+    border-bottom: 2px solid rgba(150, 119, 79, 0.2);
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+    padding: 0 0.5rem;
+    text-align: center;
+    width: auto;
+    min-width: 120px;
+    display: inline-block
+    }
+.conversational-input:focus {
+    border-bottom: 2px solid #e8a854;
+    box-shadow: none
+    }
+/* Select styling override */
+select.conversational-input {
+    appearance: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCDttnslXA0O2G-wTPYqtvZr3kHFIsA4tT9I2v1KJQrMBZEHKdC0GkH-uGFeKZE6N6qqup3SgJ8cvoHmcXFxOWkuydKziZvslzujVYWJwakmpIlNyr46Cs41gn_9RGDaLypwAD00HweJUzvuXU6MhxatTl6anvi9QRRlaHw13cYhxBOIIqBaYo5Vk1SvqYgrsBc4VUI3QgIgJcaSfQXItg-JBvzLy6MPDBibViQvSh1J1dA3feD4AG-aDxCMaDaUtWbpMSxb2z11Nwp);
+    background-position: right 0 center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 1.5em;
+    cursor: pointer
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white transition-colors duration-300 min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Layer (Soft Focus Nature) -->
+<div class="fixed inset-0 z-0 w-full h-full pointer-events-none">
+<div class="absolute inset-0 bg-white/80 dark:bg-black/70 z-10 backdrop-blur-[2px]"></div>
+<!-- Abstract blurred blobs to simulate soft focus nature if video isn't ideal -->
+<div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-green-200/30 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-overlay animate-float"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#e8a854]/20 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-overlay animate-float" style="animation-delay: 2s;"></div>
+<div class="absolute top-[30%] right-[20%] w-[30%] h-[30%] bg-emerald-100/40 rounded-full blur-[80px] mix-blend-multiply dark:mix-blend-overlay animate-float" style="animation-delay: 4s;"></div>
+<!-- Placeholder for actual video background -->
+<div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" data-alt="Soft focus nature background with leaves and light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1sZgvwzNb1INgGwTRsC5qfYazBHk5eBR_Inylt0g4G6p2bpfnmbjUDoyXPNeKoomc7OLrBFaUZ9iFAI7yRLvHplCmwlAm4WRYi6fC7ddh0yab6NXjBw4fMdCTi_yVCI-PQLaCC4-a1d13zNbMPJ8276MmWOPRgzngWifwIKECIAJ7uomhdY61IYg23SmbQVBDlLFx3Imf50W2lO-MyfZeeT7ZhKuTB2wtMlNKsqEfenEr0VNOovm_UBUHQa7I1XKabbPaTnMIbgoM');"></div>
+</div>
+<!-- Cursor Elements -->
+<div class="cursor-dot hidden md:block"></div>
+<div class="cursor-outline hidden md:block"></div>
+<div id="trail-container"></div>
+<!-- Navigation -->
+<header class="relative z-50 flex items-center justify-between px-6 py-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-text-main transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-text-main dark:text-white">Thenmozhi</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Work</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Studio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium text-primary cursor-default" href="#">Contact</a>
+</nav>
+<button class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="relative z-10 flex-grow flex items-center justify-center px-4 py-12 md:px-12 lg:px-20 w-full max-w-7xl mx-auto">
+<div class="w-full max-w-4xl">
+<div class="mb-12 md:mb-16">
+<p class="text-primary font-medium tracking-wide text-sm uppercase mb-4 pl-1 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+                    Let's create together
+                </p>
+<h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-text-main dark:text-white leading-tight tracking-tight">
+                    Start a <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#c68e42]">Conversation.</span>
+</h1>
+</div>
+<!-- Conversational Form -->
+<form class="space-y-12">
+<div class="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed md:leading-relaxed lg:leading-relaxed text-text-main dark:text-gray-200">
+<div class="inline-block relative">
+<span>Hello, my name is</span>
+</div>
+<div class="inline-block relative min-w-[200px] mx-2">
+<input class="conversational-input w-full bg-transparent placeholder:text-text-muted/50 text-primary font-medium focus:ring-0 p-0 h-auto" placeholder="your name" required="" type="text"/>
+</div>
+<div class="inline-block relative">
+<span>from</span>
+</div>
+<div class="inline-block relative min-w-[200px] mx-2">
+<input class="conversational-input w-full bg-transparent placeholder:text-text-muted/50 text-primary font-medium focus:ring-0 p-0 h-auto" placeholder="company / org" type="text"/>
+</div>
+<div class="inline-block relative">
+<span>and I want to talk about</span>
+</div>
+<div class="inline-block relative min-w-[240px] mx-2 align-bottom">
+<select class="conversational-input w-full bg-transparent text-primary font-medium focus:ring-0 p-0 pr-8 h-auto cursor-pointer">
+<option class="text-gray-400" disabled="" selected="" value="">select a topic</option>
+<option class="text-text-main" value="branding">Branding &amp; Identity</option>
+<option class="text-text-main" value="web">Web Design &amp; Dev</option>
+<option class="text-text-main" value="marketing">Digital Marketing</option>
+<option class="text-text-main" value="other">Something else</option>
+</select>
+</div>
+<div class="inline-block relative mt-4 md:mt-0">
+<span>. You can reach me at</span>
+</div>
+<div class="inline-block relative min-w-[280px] mx-2">
+<input class="conversational-input w-full bg-transparent placeholder:text-text-muted/50 text-primary font-medium focus:ring-0 p-0 h-auto" placeholder="your email address" required="" type="email"/>
+</div>
+<div class="inline-block relative">
+<span>to discuss the details.</span>
+</div>
+</div>
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-gray-200 dark:border-gray-800">
+<div class="text-sm text-text-muted dark:text-gray-400 max-w-sm">
+                        Prefer to just email us? <br/>
+<a class="text-text-main dark:text-white underline decoration-primary decoration-2 underline-offset-4 hover:text-primary transition-colors" href="mailto:hello@thenmozhi.com">hello@thenmozhi.com</a>
+</div>
+<button class="group relative flex items-center justify-center gap-3 bg-primary hover:bg-[#d99a4b] text-white text-lg font-semibold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 overflow-hidden" type="submit">
+<span class="relative z-10">Send Message</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full"></div>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer Info -->
+<footer class="relative z-10 px-6 py-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-end gap-4 text-xs font-medium text-text-muted uppercase tracking-wider">
+<div class="flex gap-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Chennai, India</span>
+<span class="hidden md:inline">|</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span> +91 98765 43210</span>
+</div>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</footer>
+<!-- Interactive Cursor Script -->
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cursorDot = document.querySelector(".cursor-dot");
+            const cursorOutline = document.querySelector(".cursor-outline");
+            const trailContainer = document.getElementById("trail-container");
+            let lastX = 0;
+            let lastY = 0;
+            let isMoving = false;
+
+            // Mouse Move Event
+            window.addEventListener("mousemove", (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                // Move cursor dot instantly
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                // Move cursor outline with slight delay for smooth feel
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+
+                // Create honey trail logic
+                if (Math.abs(posX - lastX) > 5 || Math.abs(posY - lastY) > 5) {
+                    createTrail(posX, posY);
+                    lastX = posX;
+                    lastY = posY;
+                }
+            });
+
+            // Hover effects for interactive elements
+            const interactables = document.querySelectorAll("a, button, input, select, .cursor-pointer");
+            
+            interactables.forEach(el => {
+                el.addEventListener("mouseenter", () => {
+                    cursorOutline.style.width = "60px";
+                    cursorOutline.style.height = "60px";
+                    cursorOutline.style.borderColor = "rgba(232, 168, 84, 0.8)";
+                    cursorOutline.style.backgroundColor = "rgba(232, 168, 84, 0.1)";
+                });
+                
+                el.addEventListener("mouseleave", () => {
+                    cursorOutline.style.width = "40px";
+                    cursorOutline.style.height = "40px";
+                    cursorOutline.style.borderColor = "rgba(232, 168, 84, 0.5)";
+                    cursorOutline.style.backgroundColor = "transparent";
+                });
+            });
+
+            function createTrail(x, y) {
+                const trail = document.createElement("div");
+                trail.classList.add("honey-trail");
+                
+                // Randomize size slightly for organic feel
+                const size = Math.random() * 6 + 4; 
+                trail.style.width = `${size}px`;
+                trail.style.height = `${size}px`;
+                trail.style.left = `${x}px`;
+                trail.style.top = `${y}px`;
+                
+                trailContainer.appendChild(trail);
+
+                // Remove element after animation finishes
+                setTimeout(() => {
+                    trail.remove();
+                }, 1000);
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Voice Blog - Thenmozhi</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8a854",
+                        "background-light": "#fbfaf8",
+                        "background-dark": "#211a11",
+                        "text-dark": "#050505", // Pitch black for light mode
+                        "text-light": "#f4f4f0", // Off-white for dark mode
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner look if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<!-- Scroll Progress Bar (Fixed at top) -->
+<div class="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
+<div class="h-full bg-primary w-[15%] transition-all duration-300 ease-out"></div>
+</div>
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 w-full bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#f3eee8] dark:border-[#2f2519]">
+<div class="max-w-[1200px] mx-auto px-6 py-5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-text-dark dark:text-text-light group cursor-pointer">
+<span class="material-symbols-outlined text-[28px] text-primary transition-transform group-hover:rotate-12">graphic_eq</span>
+<h1 class="text-xl font-bold tracking-tight font-display">Thenmozhi</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-dark/70 dark:text-text-light/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">Work</a>
+<a class="text-sm font-medium text-text-dark/70 dark:text-text-light/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-text-dark/70 dark:text-text-light/70 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+<button class="bg-text-dark dark:bg-text-light text-background-light dark:text-background-dark px-5 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-text-dark transition-colors duration-300">
+                    Subscribe
+                </button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-text-dark dark:text-text-light">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1000px] mx-auto px-6 py-16 md:py-24">
+<!-- Hero Section -->
+<header class="mb-20 md:mb-32">
+<h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-text-dark dark:text-text-light leading-[1.1] tracking-tight">
+                Thoughts on <br/>
+<span class="text-text-dark/40 dark:text-text-light/40 italic">design &amp; culture.</span>
+</h2>
+<div class="mt-8 flex items-center gap-3">
+<span class="h-px w-12 bg-primary"></span>
+<p class="text-text-dark/60 dark:text-text-light/60 font-medium text-sm tracking-wide uppercase">Curated by the agency</p>
+</div>
+</header>
+<!-- Blog Index List -->
+<section class="flex flex-col gap-16 md:gap-24">
+<!-- Item 1 -->
+<article class="group relative cursor-pointer block border-t border-gray-200 dark:border-gray-800 pt-12 transition-all duration-500">
+<div class="flex flex-col md:flex-row md:items-baseline gap-6 relative z-10">
+<!-- Meta Column -->
+<div class="w-full md:w-48 shrink-0 flex flex-row md:flex-col gap-4 md:gap-2 text-xs font-medium tracking-wider uppercase text-primary">
+<span>Oct 24, 2023</span>
+<span class="w-1 h-1 rounded-full bg-primary/40 md:hidden"></span>
+<span class="text-text-dark/40 dark:text-text-light/40">5 min read</span>
+</div>
+<!-- Content Column -->
+<div class="flex-1">
+<h3 class="font-serif text-4xl md:text-6xl font-medium text-text-dark dark:text-text-light group-hover:underline decoration-primary decoration-2 underline-offset-8 transition-all duration-300 leading-tight">
+                            The Death of the Pixel
+                        </h3>
+<p class="mt-6 text-lg text-text-dark/60 dark:text-text-light/60 max-w-xl font-display leading-relaxed">
+                            An exploration into how vector graphics and high-density displays have rendered the concept of the individual pixel obsolete in modern interface design.
+                        </p>
+<!-- Tags -->
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">Design</span>
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">Technology</span>
+</div>
+</div>
+<!-- Action Icon -->
+<div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 text-text-dark dark:text-text-light group-hover:bg-primary group-hover:border-primary group-hover:text-background-light transition-all duration-300">
+<span class="material-symbols-outlined -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
+</div>
+</div>
+<!-- Hover Reveal Image (Simulated) -->
+<div class="absolute top-0 right-0 w-[300px] h-[200px] opacity-0 group-hover:opacity-10 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none hidden lg:block z-0 rotate-2">
+<div class="w-full h-full bg-cover bg-center rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Abstract liquid oil painting texture with dark blue and gold swirls" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcKB5hIRaMNO8QTTNmGwrqyegBgM5J4q2gVCoFFx0JXHjuHkdXM-Jx0dYvd2pidXVB865ZLxmybrRkMBzp1-I2KIkZE9tN8GzuVqNohmcskZkF5ocg9Ao-ouviVLyD6HxRRfvI0Hkh0Ovw10FEyxOHB2IUT4CL96uhfGggQTYxFzgNuI0B4EzJJn7AUCpqh5Oyj37rBQRDVC-cqyylC6zsrOXagP-0JbFSLMUzjZ1wlJmBOWYwlaKoKgvO_XZSM8JWdBlnDqiOdp6t');"></div>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="group relative cursor-pointer block border-t border-gray-200 dark:border-gray-800 pt-12 transition-all duration-500">
+<div class="flex flex-col md:flex-row md:items-baseline gap-6 relative z-10">
+<div class="w-full md:w-48 shrink-0 flex flex-row md:flex-col gap-4 md:gap-2 text-xs font-medium tracking-wider uppercase text-primary">
+<span>Oct 20, 2023</span>
+<span class="w-1 h-1 rounded-full bg-primary/40 md:hidden"></span>
+<span class="text-text-dark/40 dark:text-text-light/40">8 min read</span>
+</div>
+<div class="flex-1">
+<h3 class="font-serif text-4xl md:text-6xl font-medium text-text-dark dark:text-text-light group-hover:underline decoration-primary decoration-2 underline-offset-8 transition-all duration-300 leading-tight">
+                            Why Silence is the Loudest Noise in UX
+                        </h3>
+<p class="mt-6 text-lg text-text-dark/60 dark:text-text-light/60 max-w-xl font-display leading-relaxed">
+                            Analyzing the impact of negative space and the absence of feedback in user flows, arguing that silence can sometimes communicate more than a notification.
+                        </p>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">UX Research</span>
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">Philosophy</span>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 text-text-dark dark:text-text-light group-hover:bg-primary group-hover:border-primary group-hover:text-background-light transition-all duration-300">
+<span class="material-symbols-outlined -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
+</div>
+</div>
+<!-- Hover Reveal Image -->
+<div class="absolute top-0 right-0 w-[300px] h-[200px] opacity-0 group-hover:opacity-10 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none hidden lg:block z-0 -rotate-1">
+<div class="w-full h-full bg-cover bg-center rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Minimalist mountain peak covered in fog with muted tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNa0K1PDKID_dNDyT-YdQgPQskH2Vsr0LaH9zKSJitB7x_kZUFAyLWpK4orJBW3fnEQG1XSH4Dq2SCN3FntyURkRFlfy8mfROJpCoN-WzcVmx3zhBspDTgCYUWWZxXaw1ccSOxE19CLCzbLWf3J15nTZXFUvp67lpGlhtwvmk_zLNHVXqqU8qpw7_a2p0h9y_YriHTY_g8bVohfVAugWxI6TLGIz42CnHa8zPDYNl8CncvdY1Rb1rnjcJc_u1g6XdoiexWK0qlaj4x');"></div>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="group relative cursor-pointer block border-t border-gray-200 dark:border-gray-800 pt-12 transition-all duration-500">
+<div class="flex flex-col md:flex-row md:items-baseline gap-6 relative z-10">
+<div class="w-full md:w-48 shrink-0 flex flex-row md:flex-col gap-4 md:gap-2 text-xs font-medium tracking-wider uppercase text-primary">
+<span>Oct 15, 2023</span>
+<span class="w-1 h-1 rounded-full bg-primary/40 md:hidden"></span>
+<span class="text-text-dark/40 dark:text-text-light/40">4 min read</span>
+</div>
+<div class="flex-1">
+<h3 class="font-serif text-4xl md:text-6xl font-medium text-text-dark dark:text-text-light group-hover:underline decoration-primary decoration-2 underline-offset-8 transition-all duration-300 leading-tight">
+                            Color Theory in the Age of Dark Mode
+                        </h3>
+<p class="mt-6 text-lg text-text-dark/60 dark:text-text-light/60 max-w-xl font-display leading-relaxed">
+                             How modern displays and energy-saving modes are rewriting the rules of contrast, saturation, and brand identity in digital products.
+                        </p>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">UI Design</span>
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">Color</span>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 text-text-dark dark:text-text-light group-hover:bg-primary group-hover:border-primary group-hover:text-background-light transition-all duration-300">
+<span class="material-symbols-outlined -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
+</div>
+</div>
+<!-- Hover Reveal Image -->
+<div class="absolute top-0 right-0 w-[300px] h-[200px] opacity-0 group-hover:opacity-10 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none hidden lg:block z-0 rotate-1">
+<div class="w-full h-full bg-cover bg-center rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Abstract neon light gradients showing color theory spectrums" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApS1IXq7YX6YpwO6v0QATBYPAwCj5602z4gXIJn3Q51AIfJ_GN_YbHIAwAd4bmJUKz-pVn-ZaouhP3Mirpfkqym2JEF7rd1BkzBWSLb17JtMQ_E4ykQjM-xi8EZze-LHLZp6di1vadJAzN8_RMq0xgqvpTtdBAeLrHG0sLlbqyk3HucsHjO6Z3sdkIFhNsU11p54D_YUURXBBcLk6IElViQnNj83chgqcp7Hje02gImEeiwY4WzWff2iofTpfimOAxZqvHEz-H4HTt');"></div>
+</div>
+</article>
+<!-- Item 4 -->
+<article class="group relative cursor-pointer block border-t border-gray-200 dark:border-gray-800 pt-12 transition-all duration-500">
+<div class="flex flex-col md:flex-row md:items-baseline gap-6 relative z-10">
+<div class="w-full md:w-48 shrink-0 flex flex-row md:flex-col gap-4 md:gap-2 text-xs font-medium tracking-wider uppercase text-primary">
+<span>Sep 28, 2023</span>
+<span class="w-1 h-1 rounded-full bg-primary/40 md:hidden"></span>
+<span class="text-text-dark/40 dark:text-text-light/40">6 min read</span>
+</div>
+<div class="flex-1">
+<h3 class="font-serif text-4xl md:text-6xl font-medium text-text-dark dark:text-text-light group-hover:underline decoration-primary decoration-2 underline-offset-8 transition-all duration-300 leading-tight">
+                            The Typographic Grid
+                        </h3>
+<p class="mt-6 text-lg text-text-dark/60 dark:text-text-light/60 max-w-xl font-display leading-relaxed">
+                            Returning to the roots of Swiss design to understand how grid systems create rhythm and harmony in chaotic content streams.
+                        </p>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">Typography</span>
+<span class="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-xs font-medium text-text-dark/50 dark:text-text-light/50 group-hover:border-primary group-hover:text-primary transition-colors">History</span>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 text-text-dark dark:text-text-light group-hover:bg-primary group-hover:border-primary group-hover:text-background-light transition-all duration-300">
+<span class="material-symbols-outlined -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
+</div>
+</div>
+<!-- Hover Reveal Image -->
+<div class="absolute top-0 right-0 w-[300px] h-[200px] opacity-0 group-hover:opacity-10 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none hidden lg:block z-0 -rotate-2">
+<div class="w-full h-full bg-cover bg-center rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Black and white architectural detail showing strict geometric grid lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGFAXQePUzkSQ1GJT91hoeF_ZZUnO0td9M7CcJ-yfKLoz8Tvis7Qv9v170YfMw2Z469dIFXKkEI2SmX-AMKsI8rj46InvOJWQAltjK6EUG2bOXHRXRlVOmMdLtqeYxavEBw3PR66Ty9fca7AWC30rzv_wBmTK435o6G7uuxaBo-_I5Sgdx2yF0a1CSAx2ifIKIAY3RnL-Tm30IvT_76zJsLOxcRIgbgykDuhwnlxWMegyvnxRNrcxDMhhB3o_dn9v83ViEUzGrFg9A');"></div>
+</div>
+</article>
+</section>
+<!-- Load More -->
+<div class="mt-32 flex justify-center">
+<button class="group flex items-center gap-3 px-8 py-4 bg-transparent border border-gray-300 dark:border-gray-700 rounded-full hover:bg-text-dark hover:border-text-dark dark:hover:bg-text-light dark:hover:border-text-light hover:text-white dark:hover:text-black transition-all duration-300">
+<span class="text-sm font-bold tracking-wide">Load older thoughts</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-y-1 transition-transform">arrow_downward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-[#f3eee8] dark:border-[#2f2519] mt-12 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">graphic_eq</span>
+<span class="text-text-dark dark:text-text-light font-bold font-display text-sm">Thenmozhi © 2023</span>
+</div>
+<div class="flex gap-8">
+<a class="text-text-dark/50 dark:text-text-light/50 hover:text-primary text-sm transition-colors" href="#">Twitter</a>
+<a class="text-text-dark/50 dark:text-text-light/50 hover:text-primary text-sm transition-colors" href="#">Instagram</a>
+<a class="text-text-dark/50 dark:text-text-light/50 hover:text-primary text-sm transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>
